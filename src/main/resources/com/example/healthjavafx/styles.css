@@ -1,0 +1,75 @@
+/* Style général de l'application */
+.root {
+    -fx-font-family: "Arial";
+    -fx-base: #ffffff; /* Couleur de base blanche */
+    -fx-background-color: #f2f8f2; /* Fond doux et apaisant */
+}
+
+/* Style pour les onglets */
+.tab-pane .tab {
+    -fx-background-color: #e0f7fa; /* Couleur de fond douce pour les onglets */
+    -fx-text-fill: #00796b; /* Texte en vert foncé */
+    -fx-font-size: 14px;
+}
+
+/* Style des boutons */
+.button {
+    -fx-background-color: #4db6e4; /* Couleur de fond bleu clair */
+    -fx-text-fill: white; /* Couleur du texte en blanc */
+    -fx-padding: 10px 20px; /* Espacement interne */
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1); /* Ombre douce */
+}
+
+.button:hover {
+    -fx-background-color: #26a69a; /* Couleur de fond au survol */
+}
+
+/* Style des graphiques */
+.line-chart {
+    -fx-background-color: #ffffff; /* Fond blanc pour les graphiques */
+    -fx-border-color: #b2ebf2; /* Bordure en bleu clair */
+    -fx-border-width: 2; /* Épaisseur de la bordure */
+}
+
+/* Étiquettes et titres */
+.label {
+    -fx-text-fill: #00796b; /* Texte en vert foncé */
+    -fx-font-weight: bold;
+}
+
+/* Titres des graphiques */
+.line-chart .chart-title {
+    -fx-text-fill: #00796b; /* Titre en vert foncé */
+    -fx-font-size: 18px;
+}
+
+/* Style pour les axes des graphiques */
+.number-axis .axis-label {
+    -fx-text-fill: #00796b; /* Étiquettes des axes en vert foncé */
+    -fx-font-weight: bold;
+}
+
+.number-axis .tick-label {
+    -fx-text-fill: #555555; /* Étiquettes des ticks en gris foncé */
+}
+
+/* Styles supplémentaires pour un look médical */
+.label {
+    -fx-font-size: 16px; /* Taille de police pour les labels */
+    -fx-text-fill: #00796b; /* Couleur du texte */
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #a7ffeb; /* Couleur d'arrière-plan pour l'onglet sélectionné */
+}
+
+/* Effets de survol pour les graphiques */
+.line-chart .series {
+    -fx-stroke-width: 2; /* Épaisseur des lignes */
+}
+
+.line-chart .series:hover {
+    -fx-stroke: #00796b; /* Changer la couleur au survol */
+}
