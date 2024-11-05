@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.healthjavafx.HelloController">
+  <tabs>
+    <!-- Onglet pour les données de glycémie -->
+    <Tab text="Graphique Glycémie">
+      <VBox spacing="10">
+        <padding>
+          <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Label text="Sélectionnez la période à afficher:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+        <VBox spacing="5">
+          <Button text="Aujourd'hui" onAction="#showDailyData" styleClass="button"/>
+          <Button text="Semaine" onAction="#showWeeklyData" styleClass="button"/>
+          <Button text="Mois" onAction="#showMonthlyData" styleClass="button"/>
+        </VBox>
+        <LineChart fx:id="glucoseChart" style="-fx-background-color: #f9f9f9;">
+          <xAxis>
+            <NumberAxis fx:id="timeAxis" label="Temps (minutes)"/>
+          </xAxis>
+          <yAxis>
+            <NumberAxis label="Taux de glycémie (mg/dL)"/>
+          </yAxis>
+        </LineChart>
+      </VBox>
+    </Tab>
+
+    <!-- Nouvel onglet pour le graphique en temps réel -->
+    <Tab text="Suivi en Temps Réel">
+      <VBox spacing="10">
+        <padding>
+          <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Label text="Suivi de la glycémie en temps réel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+        <LineChart fx:id="realtimeChart" title="Suivi de Glycémie en Temps Réel" style="-fx-background-color: #f9f9f9;">
+          <xAxis>
+            <NumberAxis fx:id="realtimeXAxis" label="Temps (secondes)" lowerBound="0" upperBound="60" tickUnit="5"/>
+          </xAxis>
+          <yAxis>
+            <NumberAxis fx:id="realtimeYAxis" label="Taux de glycémie (mg/dL)" lowerBound="70" upperBound="180"/>
+          </yAxis>
+        </LineChart>
+      </VBox>
+    </Tab>
+  </tabs>
+</TabPane>
